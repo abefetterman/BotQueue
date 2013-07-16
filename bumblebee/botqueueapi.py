@@ -87,7 +87,7 @@ class BotQueueAPI():
         #prepare and make our request now.
         request = requests.Request('POST', url, data=parameters, files=files)
         request = self.my_oauth_hook(request)
-        response = self.session.send(request.prepare(), timeout=15)
+        response = self.session.send(request.prepare(), timeout=15,verify=False)
         result = response.json()
 
         #sweet, our request must have gone through.
